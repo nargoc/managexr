@@ -15,7 +15,7 @@ app.get("/devices", async (req, res) => {
   }
 
   const auth = base64.encode(`${API_KEY_ID}:${API_KEY_SECRET}`);
-  const url = `https://api.managexr.com/organizations/7gAOs8PxwlEjKAgwwuG9/devices?page=${page}&limit=${limit}`;
+  const url = `https://managexrapi.com/organizations/7gAOs8PxwlEjKAgwwuG9/devices?page=${page}&limit=${limit}`;
 
   try {
     const response = await axios.get(url, {
