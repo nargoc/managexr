@@ -26,14 +26,18 @@ app.get("/devices", async (req, res) => {
 
     const fullData = response.data?.data || [];
 
-    // Keep only minimal useful fields
     const filtered = fullData.map((d) => ({
       id: d.id,
+      serial: d.serial,
       name: d.name,
-      status: d.status,
-      lastSeen: d.lastSeen,
       model: d.model,
-      osVersion: d.osVersion
+      manufacturer: d.manufacturer,
+      online: d.online,
+      batteryLevel: d.batteryLevel,
+      osVersion: d.osVersion,
+      lastSync: d.lastSync,
+      firmwareVersion: d.firmwareVersion,
+      configurationName: d.configuration?.name
     }));
 
     return res.json({
